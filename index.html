@@ -8,45 +8,10 @@
   <meta property="og:title" content="D-Fre — ドイツ語単語学習アプリ" />
   <meta property="og:description" content="冠詞色・例文・音声・苦手復習でドイツ語の語彙を体系的に。" />
   <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="./styles.css" />
   <style>
-    :root {
-      --paper: #f6f3ec;
-      --card: #fffdf7;
-      --ink: #161513;
-      --ink-2: #4b4844;
-      --ink-3: #7a7771;
-      --rule: #d8d3c4;
-      --link: #2563eb;
-      --der: #2563eb;
-      --die: #dc2626;
-      --das: #16a34a;
-      --plural: #ca8a04;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --paper: #14130f;
-        --card: #1a1914;
-        --ink: #f1ede2;
-        --ink-2: #b8b4a7;
-        --ink-3: #7e7a6e;
-        --rule: #2e2c25;
-        --link: #6b9dff;
-        --der: #6b9dff;
-        --die: #f06770;
-        --das: #5fc77b;
-        --plural: #e9c553;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Hiragino Sans", "Yu Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
-    }
+    /* index 固有レイアウト（共通分は styles.css） */
+    body { line-height: 1.7; }
     .wrap { max-width: 720px; margin: 0 auto; padding: 4rem 1.25rem; }
     .brand {
       font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
@@ -55,12 +20,7 @@
       margin: 0 0 0.5rem;
     }
     .tagline { color: var(--ink-2); font-size: 1.1rem; margin: 0 0 2.5rem; }
-    .articles {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
+    .articles { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 3rem; }
     .chip {
       font-family: "Hiragino Mincho ProN", serif;
       font-style: italic;
@@ -82,6 +42,7 @@
       padding: 1.25rem 1.5rem;
       margin-bottom: 2.5rem;
     }
+    /* 共通 h2 のボーダー等を打ち消し、ステータス見出し用に上書き */
     .status h2 {
       margin: 0 0 0.4rem;
       font-size: 1rem;
@@ -89,30 +50,16 @@
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      border-bottom: none;
+      padding-bottom: 0;
     }
     .status p { margin: 0; color: var(--ink-2); }
 
-    h2.section {
-      margin-top: 3rem;
-      font-size: 1.25rem;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 0.4rem;
-    }
-    ul.features { padding-left: 1.4rem; }
+    h2.section { margin-top: 3rem; }
     ul.features li { margin-bottom: 0.4rem; }
 
-    footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--rule);
-      font-size: 0.9rem;
-      color: var(--ink-3);
-    }
-    footer a {
-      color: var(--ink-2);
-      text-decoration: none;
-      margin-right: 1.2rem;
-    }
+    footer { margin-top: 4rem; padding-top: 2rem; font-size: 0.9rem; }
+    footer a { color: var(--ink-2); text-decoration: none; margin-right: 1.2rem; }
     footer a:hover { color: var(--link); }
     .copyright { display: block; margin-top: 1rem; color: var(--ink-3); }
   </style>
@@ -139,6 +86,7 @@
   <h2 class="section">特徴（予定）</h2>
   <ul class="features">
     <li>名詞の性（<span style="color:var(--der)">der</span> / <span style="color:var(--die)">die</span> / <span style="color:var(--das)">das</span>）を主役にした冠詞色のブランド</li>
+    <li>冠詞早見表 — 定冠詞・定冠詞類（dieser ほか）・不定冠詞・不定冠詞類（kein ほか）の全変化を性別 × 4格で一覧</li>
     <li>複数形・動詞活用・前置詞の格支配を体系的に学べる</li>
     <li>例文と音声で実用的な語彙習得</li>
     <li>苦手単語の自動抽出と Leitner 方式による反復復習</li>
